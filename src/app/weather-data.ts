@@ -1,3 +1,5 @@
+import { Optional } from "@angular/core";
+
 export interface WeatherData {
     coord?: CoordData;
     weather?: WeatherDto[];
@@ -28,12 +30,16 @@ export class Weather {
     constructor() {}
     
     static fromData(weatherDataFromServer: WeatherData) {
-
+        
         const mappedObject = new Weather()
         mappedObject.base = weatherDataFromServer.base;
         mappedObject.visibility = weatherDataFromServer.visibility;
         mappedObject.dt = weatherDataFromServer.dt;
+        if(weatherDataFromServer.weather) {
+            mappedObject.main = weatherDataFromServer.weather[0].main;
+        }
         
         return mappedObject;
     }
+
 }
