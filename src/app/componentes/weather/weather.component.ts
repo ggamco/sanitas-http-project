@@ -15,7 +15,7 @@ export class WeatherComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const url = "http://api.openweathermap.org/data/2.5/weather?q=Ma&appid=c2395dafd752b24690e1cdd50b5a697"
+    const url = "http://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=c2395dafd752b24690e1cdd50b5a6972"
     let response: Observable<WeatherData> = this.httpClient
       .get<WeatherData>(url)
       .pipe(catchError(this.handleError))
