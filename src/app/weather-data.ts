@@ -1,5 +1,3 @@
-import { Optional } from "@angular/core";
-
 export interface WeatherData {
     coord?: CoordData;
     weather?: WeatherDto[];
