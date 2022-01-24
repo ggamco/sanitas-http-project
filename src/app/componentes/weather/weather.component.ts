@@ -10,21 +10,25 @@ import { Weather, WeatherData } from 'src/app/weather-data';
 })
 export class WeatherComponent implements OnInit {
 
+  cityName: String = "";
+
   constructor(
     private httpClient: HttpClient
   ) { }
 
   ngOnInit(): void {
-    const url = "http://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=c2395dafd752b24690e1cdd50b5a6972"
+  }
+
+  callService(data: string) {
+    const url = "http://api.openweathermap.org/data/2.5/weather?q=" + data + "&appid=c2395dafd752b24690e1cdd50b5a6972"
     let response: Observable<WeatherData> = this.httpClient
       .get<WeatherData>(url)
       .pipe(catchError(this.handleError))
 
     response.subscribe(respuesta => {
       // let response = Weather.fromData(respuesta)
-      console.log(respuesta.dt);
+      console.log(respuesta.visibility);
     })
-    
   }
 
   private handleError(error: HttpErrorResponse) {
