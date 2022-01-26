@@ -1,3 +1,5 @@
-<input [(ngModel)]="cityName" class="form-control" id="city" name="city" required minlength="3" type="text">
+<input sanitas-destacar [(ngModel)]="cityName" class="form-control" id="city" name="city" required minlength="3" type="text">
 <button (click)="callService()">Get weather</button>
-<h2>{{resultado}}</h2>
+<h2 sanitas-destacar >{{resultado}}</h2>
+
+<p *sanitasMultiplicar="condition">Lorem Ipsum</p>
