@@ -13,8 +13,6 @@ const appid = "&appid=c2395dafd752b24690e1cdd50b5a6972";
 })
 export class WeatherService {
 
-  message: any = "";
-
   constructor(private httpClient: HttpClient) { }
 
   getWeatherByCityName(cityName: string): Observable<WeatherData> {
