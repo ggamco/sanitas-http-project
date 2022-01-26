@@ -1,7 +1,7 @@
 export interface WeatherData {
-    coord?: CoordData;
+    coord: CoordData;
     weather?: WeatherDto[];
-    base?: string;
+    base: string;
     dt?: number;
     visibility?: number;
 }
@@ -12,10 +12,10 @@ interface CoordData {
 }
 
 interface WeatherDto {
-    id?: number;
-    main?: string;
-    description?: string;
-    icon?: string;
+    id: number;
+    main: string;
+    description: string;
+    icon: string;
 }
 
 export class Weather {
@@ -35,6 +35,7 @@ export class Weather {
         mappedObject.dt = weatherDataFromServer.dt;
         if(weatherDataFromServer.weather) {
             mappedObject.main = weatherDataFromServer.weather[0].main;
+            mappedObject.description = weatherDataFromServer.weather[0].description;
         }
         
         return mappedObject;

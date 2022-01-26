@@ -1,2 +1,3 @@
-<input #data type="text">
-<button (click)="callService(data.value)">Get weather</button>
+<input [(ngModel)]="cityName" class="form-control" id="city" name="city" required minlength="3" type="text">
+<button (click)="callService()">Get weather</button>
+<h2>{{resultado}}</h2>
