@@ -1,0 +1,10 @@
+{
+    "rules": {
+        "no-any": true,
+        "curly": true,
+        "quotemark": [true, "double"],
+        "semicolon": [true, "always"],
+        "no-unused-variable": true,
+        "no-unused-declaration": true
+    }
+}
